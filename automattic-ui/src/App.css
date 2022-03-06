@@ -1,0 +1,40 @@
+h1 {
+    padding: 18px 0px;
+}
+
+img {
+    border-radius: 8px !important;
+}
+
+.heading:not(:first-of-type) {
+    margin-top: 60px;
+}
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+@media screen and (max-width: 680px) {
+    .cv-grid {
+     display: block;
+    }
+
+    .cv-grid > div {
+        margin-bottom: 40px;
+    }
+  }
+
+.cv-grid > div {
+    border-bottom: 1px solid gray;
+}
+
+.header {
+    position: sticky;
+    top:0;
+    background: #fff;
+}
+
+.mediaText {
+    margin-top: 20px;
+}
