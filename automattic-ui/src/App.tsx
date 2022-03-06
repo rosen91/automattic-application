@@ -6,7 +6,7 @@ import { ComponentsResolver } from "./Components";
 
 export type WP_RES = WP_REST_API_Post & { gutenberg_blocks: WP_Block_Parsed[] };
 
-export const BASE_API_URL = "http://localhost:8000/wp-json/wp/v2";
+export const BASE_API_URL = "https://api.heyautomattichireme.com/wp-json/wp/v2";
 
 function App() {
   const [data, setData] = useState<WP_RES | null>(null);
