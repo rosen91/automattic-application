@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import "./App.css";
 import { useState, useEffect } from "react";
 import { WP_REST_API_Post, WP_Block_Parsed } from "wp-types";
@@ -50,6 +50,22 @@ function App() {
     },
   ];
 
+  const scrollToTitle = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    e.preventDefault();
+    const el = document.getElementById(id.replace("#", ""));
+    if (!el) {
+      return;
+    }
+
+    window.scrollTo({
+      top: el.offsetTop - 70,
+      behavior: "smooth",
+    });
+  };
+
   console.log(
     "%cSneaky hire me promotion.",
     "background: red; color: yellow; font-size: x-large"
@@ -63,7 +79,12 @@ function App() {
           <ol className="menu">
             {headings?.map((heading, i) => (
               <li key={`heading-${i}`} className="page-item page-item-home">
-                <a href={heading.link}>{heading.title}</a>
+                <a
+                  onClick={(e) => scrollToTitle(e, heading.link)}
+                  href={heading.link}
+                >
+                  {heading.title}
+                </a>
               </li>
             ))}
           </ol>

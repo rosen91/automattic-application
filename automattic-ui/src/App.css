@@ -32,9 +32,10 @@ img {
 .header {
     position: sticky;
     top:0;
-    background: #fff;
+    background: #ffffff;
+    z-index: 1;
 }
 
-.mediaText {
+.media-text {
     margin-top: 20px;
 }

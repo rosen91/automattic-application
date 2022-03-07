@@ -15,7 +15,7 @@ export const MediaText: FunctionComponent<ComponentProps> = ({
   );
 
   return (
-    <div className="mediaText">
+    <div className="media-text">
       <div
         className="mediaTextMedia"
         dangerouslySetInnerHTML={{ __html: replacedString }}
